@@ -18,14 +18,11 @@ create table subjects
     id               INT NOT NULL PRIMARY KEY,
     name             varchar(255),
     description      varchar(255),
-    lecturer_id      INT,
-    name             varchar(255),
+    teacher_id       INT,
     start_date       DATE,
     end_date         DATE,
     grade_date       DATE,
     grade            DOUBLE,
-    teacher_name     varchar(255),
-    teacher_lastname varchar(255)
 );
 
 drop table teachers if exists;
