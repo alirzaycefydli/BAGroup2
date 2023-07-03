@@ -3,7 +3,7 @@ package com.horyzont.bussapp.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "students")
+@Table(name = "teachers")
 public class TeacherEntity {
     @Id
     @GeneratedValue
