@@ -1,13 +1,13 @@
 package com.horyzont.bussapp.entities;
 
-import javax.persistence.*;
-import java.sql.Date;
+import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "borrows")
 public class BorrowEntity {
     @Id
-    @GeneratedValue
     private Integer id;
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     @OneToOne

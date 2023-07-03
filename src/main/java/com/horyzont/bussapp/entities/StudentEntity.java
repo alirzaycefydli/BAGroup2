@@ -1,12 +1,11 @@
 package com.horyzont.bussapp.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "students")
 public class StudentEntity {
     @Id
-    @GeneratedValue
     private Integer id;
     @Column(name = "first_name")
     private String first_name;
