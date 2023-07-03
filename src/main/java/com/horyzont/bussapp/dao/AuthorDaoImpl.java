@@ -20,7 +20,9 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Override
     public AuthorEntity getById(Integer id) {
-
+        String queryString = "SELECT * FROM authors WHERE id = id";
+        Query query = entityManager.createQuery(queryString);
+        return null;
     }
 
     @Override
