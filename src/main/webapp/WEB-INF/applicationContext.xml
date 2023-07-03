@@ -5,23 +5,25 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
-http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/mvc/spring-tx-4.0.xsd
+http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
     <context:component-scan
             base-package="wwsis" />
-    <context:annotation-config />
     <tx:annotation-driven />
+    <context:annotation-config />
+    
 
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.hsqldb.jdbc.JDBCDriver" />
-        <property name="url" value="jdbc:hsqldb:hsql://localhost/sss" />
+        <property name="url" value="jdbc:hsqldb:hsql://localhost/" />
         <property name="username" value="SA" />
         <property name="password" value="" />
     </bean>
@@ -30,7 +32,7 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     <bean id="entityManagerFactoryBean"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="wwsis.sss.model" /> <!--update --->
+        <property name="packagesToScan" value="WWSIS.BAGroup2.entity" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
                 <property name="showSql" value="false" />

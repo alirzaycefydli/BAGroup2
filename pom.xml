@@ -61,7 +61,8 @@
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-core</artifactId>
+	   <!-- <artifactId>spring-core</artifactId>-->
+	    <artifactId>spring-context</artifactId>
 	    <version>${spring.version}</version>
 	</dependency>
 	
@@ -121,7 +122,7 @@
 	    <version>${spring.version}</version>
 	</dependency>
 
-	
+
   </dependencies>
 
   <build>

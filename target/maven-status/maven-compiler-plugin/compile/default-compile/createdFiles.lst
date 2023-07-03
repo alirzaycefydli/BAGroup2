@@ -1,1 +1,7 @@
 WWSIS/BAGroup2/App.class
+WWSIS/BAGroup2/dao/Impl/AuthorDaoImpl.class
+WWSIS/BAGroup2/entity/AuthorEntity.class
+WWSIS/BAGroup2/dao/AuthorDao.class
+WWSIS/BAGroup2/entity/StudentEntity.class
+WWSIS/BAGroup2/dao/Impl/StudentDaoImpl.class
+WWSIS/BAGroup2/dao/StudentDao.class

@@ -22,7 +22,6 @@ public class StudentDaoImpl implements StudentDao {
 	@Override
 	public void updateStudent(StudentEntity student) {
 		entityManager.merge(student);
-		
 	}
 
 	@Override
@@ -32,7 +31,8 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Override
 	public List<StudentEntity> getAllStudents() {
-		return entityManager.createQuery("from Student", StudentEntity.class).getResultList();
+		//return entityManager.createQuery("from Student", StudentEntity.class).getResultList();
+		return null;
 	}
 
 	@Override
