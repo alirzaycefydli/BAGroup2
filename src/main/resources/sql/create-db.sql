@@ -65,6 +65,17 @@ create table borrows
     FOREIGN KEY (book_id) REFERENCES books (id)
 );
 
+drop table grades if exists;
+create table grades
+(
+    id         INTEGER IDENTITY PRIMARY KEY,
+    grade      INT,
+    student_id INT,
+    subject_id INT,
+    FOREIGN KEY (student_id) REFERENCES students (id),
+    FOREIGN KEY (subject_id) REFERENCES subjects (id)
+);
+
 INSERT INTO students (first_name, last_name, email, password, login)
 VALUES ('Cem', 'Arslan', 'cemarslan@gmail.com', '123123', 'cem.arslan');
 INSERT INTO students (first_name, last_name, email, password, login)
@@ -107,3 +118,8 @@ INSERT INTO borrows (student_id, book_id, borrow_date, return_date, status)
 VALUES (1, 3, '2016-01-02', '2016-02-02', 0);
 INSERT INTO borrows (student_id, book_id, borrow_date, return_date, status)
 VALUES (1, 4, '2016-01-02', '2016-02-02', 0);
+
+INSERT INTO grades (grade, student_id, subject_id)
+VALUES (45, 0, 0);
+INSERT INTO grades (grade, student_id, subject_id)
+VALUES (90, 0, 1);
