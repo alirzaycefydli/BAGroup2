@@ -26,6 +26,11 @@ class LibraryController {
         return libraryService.getAllBooks();
     }
 
+    @GetMapping("/getAuthorBooks/{authorId}")
+    public List<BookEntity> getAuthorBooks(@PathVariable Integer authorId) {
+        return libraryService.getBooksByAuthorId(authorId);
+    }
+
     @GetMapping("/getAllBorrows")
     public List<BorrowEntity> getAllBorrows() {
         return libraryService.getAllBorrows();
