@@ -1,8 +1,5 @@
 package com.horyzont.bussapp.service;
 
-import com.horyzont.bussapp.dao.AuthorDao;
-import com.horyzont.bussapp.dao.BookDao;
-import com.horyzont.bussapp.dao.BorrowDao;
 import com.horyzont.bussapp.dao.StudentDao;
 import com.horyzont.bussapp.entities.StudentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +8,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService {
 
-    //login-register-
-    // logout--reset password-delete account- remind password-get grade
+    //login-register-delete account-remind password
+    // logout--reset password--get grade
 
     @Autowired
     StudentDao studentDao;
@@ -38,7 +35,23 @@ public class StudentService {
     }
 
     public void deleteAccount(Integer id){
-        studentDao.deleteById(id);
+        StudentEntity entity = new StudentEntity();
+        entity.setId(id);
+        studentDao.delete(entity);
+    }
+
+    public String remindPassword(String email){
+        StudentEntity entity = studentDao.findByMail(email);
+        System.out.println(entity.getPassword());
+        return entity.getPassword();
+    }
+
+    public void resetPassword(String email, String password, String newPassword){
+        StudentEntity entity = studentDao.findByMail(email);
+        if (entity.getPassword().equals(password)){
+            entity.setPassword(newPassword);
+            studentDao.save(entity);
+        }
     }
 
 

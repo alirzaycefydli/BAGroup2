@@ -25,8 +25,17 @@ public class StudentController {
         return studentService.register(first_name,last_name,email,password,login);
     }
 
-    @GetMapping("/deleteAccount/{id}/")
+    @GetMapping("/deleteAccount/{id}")
     public void login(@PathVariable Integer id) {
         studentService.deleteAccount(id);
+    }
+    @GetMapping("/remindPassword/{email}")
+    public void remindPassword(@PathVariable String email) {
+        studentService.remindPassword(email);
+    }
+
+    @GetMapping("/resetPassword/{email}/{password}/{newPassword}")
+    public void remindPassword(@PathVariable String email, String password, String newPassword) {
+        studentService.resetPassword(email,password,newPassword);
     }
 }
