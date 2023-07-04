@@ -71,9 +71,9 @@ INSERT INTO students (first_name, last_name, email, password, login)
 VALUES ('Ali Riza', 'Yucefaydali', 'aliriza@gmail.com', 'abcabc', 'ali.riza');
 
 INSERT INTO teachers (first_name, last_name, email, password, login)
-values ('Cezar', 'Holub', 'cezar.holub@gmail.com', '123321', 'cezar.holub');
+VALUES ('Cezar', 'Holub', 'cezar.holub@gmail.com', '123321', 'cezar.holub');
 INSERT INTO teachers (first_name, last_name, email, password, login)
-values ('Pawel', 'Moriewic', 'pawel.moriewic@gmail.com', '123123123', 'pawel.moriewic');
+VALUES ('Pawel', 'Moriewic', 'pawel.moriewic@gmail.com', '123123123', 'pawel.moriewic');
 
 INSERT INTO subjects (name, description, teacher_id, start_date, end_date, grade_date)
 VALUES ('Math', 'Math Subject Description', 1, '2016-01-02', '2017-01-02', '2017-01-02');
