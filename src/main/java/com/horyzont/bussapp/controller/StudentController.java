@@ -1,6 +1,7 @@
 package com.horyzont.bussapp.controller;
 
 import com.horyzont.bussapp.entities.AuthorEntity;
+import com.horyzont.bussapp.entities.StudentEntity;
 import com.horyzont.bussapp.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,11 @@ public class StudentController {
     @GetMapping("/login/{email}/{password}")
     public boolean login(@PathVariable String email, @PathVariable String password) {
         return studentService.login(email,password);
+    }
+
+    @GetMapping("/register/{first_name}/{last_name}/{email}/{password}/{login}")
+    public StudentEntity register(@PathVariable String first_name, @PathVariable String last_name, @PathVariable String email, @PathVariable String password, @PathVariable String login) {
+        return studentService.register(first_name,last_name,email,password,login);
     }
 
 }
