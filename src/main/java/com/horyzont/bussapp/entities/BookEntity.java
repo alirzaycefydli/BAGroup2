@@ -8,6 +8,7 @@ import java.sql.Date;
 @Table(name = "books")
 public class BookEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "title")
     private String title;
