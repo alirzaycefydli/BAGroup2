@@ -45,9 +45,9 @@ create table books
 (
     id             INTEGER IDENTITY PRIMARY KEY,
     title          VARCHAR(255),
-    author         INT,
+    author_id      INT,
     published_date DATE,
-    FOREIGN KEY (author) REFERENCES authors (id)
+    FOREIGN KEY (author_id) REFERENCES authors (id)
 );
 
 drop table borrows if exists;
@@ -81,15 +81,15 @@ VALUES ('Salim', 'Isler');
 INSERT INTO authors (first_name, last_name)
 VALUES ('Kadir', 'Kocak');
 
-INSERT INTO books (title, author, published_date)
+INSERT INTO books (title, author_id, published_date)
 VALUES ('Book 1', 0, '1997-01-02');
-INSERT INTO books (title, author, published_date)
+INSERT INTO books (title, author_id, published_date)
 VALUES ('Book 2', 0, '1991-01-02');
-INSERT INTO books (title, author, published_date)
+INSERT INTO books (title, author_id, published_date)
 VALUES ('Book 3', 0, '1992-01-02');
-INSERT INTO books (title, author, published_date)
+INSERT INTO books (title, author_id, published_date)
 VALUES ('Book 4', 1, '1993-01-02');
-INSERT INTO books (title, author, published_date)
+INSERT INTO books (title, author_id, published_date)
 VALUES ('Book 5', 1, '1994-01-02');
 
 INSERT INTO borrows (student_id, book_id, borrow_date, return_date, status)

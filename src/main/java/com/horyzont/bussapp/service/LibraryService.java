@@ -63,4 +63,8 @@ public class LibraryService {
         borrowEntity.setBorrow_date(sdf.format(borrowDate));
         borrowDao.save(borrowEntity);
     }
+
+    public List<BookEntity> getBooksByAuthorId(Integer authorId) {
+        return bookDao.findByAuthorId(authorId);
+    }
 }

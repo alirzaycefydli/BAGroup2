@@ -12,7 +12,7 @@ public class BookEntity {
     private Integer id;
     @Column(name = "title")
     private String title;
-    @JoinColumn(name = "author", referencedColumnName = "id")
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
     @OneToOne
     private AuthorEntity author;
     @Column(name = "published_date")
