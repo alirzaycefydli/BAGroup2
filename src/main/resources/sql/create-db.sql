@@ -18,9 +18,9 @@ create table subjects
     name        varchar(255),
     description varchar(255),
     teacher_id  INT,
-    start_date  DATE,
-    end_date    DATE,
-    grade_date  DATE
+    start_date  varchar(255),
+    end_date    varchar(255),
+    grade_date  varchar(255)
 );
 
 drop table teachers if exists;
@@ -77,6 +77,9 @@ VALUES ('Pawel', 'Moriewic', 'pawel.moriewic@gmail.com', '123123123', 'pawel.mor
 
 INSERT INTO subjects (name, description, teacher_id, start_date, end_date, grade_date)
 VALUES ('Math', 'Math Subject Description', 1, '2016-01-02', '2017-01-02', '2017-01-02');
+INSERT INTO subjects (name, description, teacher_id, start_date, end_date, grade_date)
+VALUES ('Business Application Programming', 'Business Application Programming Description', 0, '2016-01-02',
+        '2017-01-02', '2017-01-02');
 
 INSERT INTO authors (first_name, last_name)
 VALUES ('Salim', 'Isler');
