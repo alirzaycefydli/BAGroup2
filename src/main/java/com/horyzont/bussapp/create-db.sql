@@ -56,9 +56,11 @@ create table borrows
     id          INT NOT NULL PRIMARY KEY,
     student_id  INT,
     book_id     INT,
-    borrow_date INT,
-    return_date INT,
-    status      BIT
+    borrow_date DATE,
+    return_date DATE,
+    status      BIT,
+    FOREIGN KEY (student_id) REFERENCES students (id),
+    FOREIGN KEY (book_id) REFERENCES books (id)
 );
 
 INSERT INTO students (id, first_name, last_name, email, password, login)
@@ -81,6 +83,22 @@ VALUES (2, 'Kadir', 'Kocak');
 
 INSERT INTO books (id, title, author, published_date)
 VALUES (1, 'Book 1', 1, '1997-01-02');
-
 INSERT INTO books (id, title, author, published_date)
 VALUES (2, 'Book 2', 1, '1991-01-02');
+INSERT INTO books (id, title, author, published_date)
+VALUES (3, 'Book 3', 1, '1992-01-02');
+INSERT INTO books (id, title, author, published_date)
+VALUES (4, 'Book 4', 1, '1993-01-02');
+INSERT INTO books (id, title, author, published_date)
+VALUES (5, 'Book 5', 1, '1994-01-02');
+
+INSERT INTO borrows (id, student_id, book_id, borrow_date, return_date, status)
+VALUES (1, 1, 1, '2016-01-02', '2016-02-02', 0);
+INSERT INTO borrows (id, student_id, book_id, borrow_date, return_date, status)
+VALUES (2, 1, 2, '2016-01-02', '2016-02-02', 0);
+INSERT INTO borrows (id, student_id, book_id, borrow_date, return_date, status)
+VALUES (3, 2, 3, '2016-01-02', '2016-02-02', 0);
+INSERT INTO borrows (id, student_id, book_id, borrow_date, return_date, status)
+VALUES (4, 2, 4, '2016-01-02', '2016-02-02', 0);
+INSERT INTO borrows (id, student_id, book_id, borrow_date, return_date, status)
+VALUES (5, 2, 5, '2016-01-02', '2016-02-02', 0);
