@@ -13,4 +13,8 @@ public interface StudentDao extends JpaRepository<StudentEntity, Integer> {
 
     @Query("SELECT count(1) from StudentEntity s WHERE s.email = ?1 AND s.password = ?2")
     public Integer findByMailAndPassword(String email , String password);
+
+
+    @Query("DELETE from StudentEntity s WHERE s.id = ?1")
+    public void deleteById(Integer id);
 }

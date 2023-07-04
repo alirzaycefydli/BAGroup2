@@ -25,4 +25,8 @@ public class StudentController {
         return studentService.register(first_name,last_name,email,password,login);
     }
 
+    @GetMapping("/deleteAccount/{id}/")
+    public void login(@PathVariable Integer id) {
+        studentService.deleteAccount(id);
+    }
 }

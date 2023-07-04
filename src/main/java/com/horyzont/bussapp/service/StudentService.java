@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService {
 
-    //login-
-    // logout-register-reset password-delete account- remind password-get grade
+    //login-register-
+    // logout--reset password-delete account- remind password-get grade
 
     @Autowired
     StudentDao studentDao;
@@ -35,6 +35,10 @@ public class StudentService {
         entity.setLogin(login);
         studentDao.save(entity);
         return entity;
+    }
+
+    public void deleteAccount(Integer id){
+        studentDao.deleteById(id);
     }
 
 
