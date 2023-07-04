@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentService {
 
-    //login-register-delete account-remind password
-    // logout--reset password--get grade
-
     @Autowired
     StudentDao studentDao;
 
@@ -46,12 +43,15 @@ public class StudentService {
         return entity.getPassword();
     }
 
-    public void resetPassword(String email, String password, String newPassword){
+    public String resetPassword(String email, String password, String newPassword){
         StudentEntity entity = studentDao.findByMail(email);
         if (entity.getPassword().equals(password)){
             entity.setPassword(newPassword);
             studentDao.save(entity);
+
+            return "Password has been updated";
         }
+        return "Something went wrong!";
     }
 
 

@@ -30,12 +30,12 @@ public class StudentController {
         studentService.deleteAccount(id);
     }
     @GetMapping("/remindPassword/{email}")
-    public void remindPassword(@PathVariable String email) {
-        studentService.remindPassword(email);
+    public String remindPassword(@PathVariable String email) {
+        return studentService.remindPassword(email);
     }
 
     @GetMapping("/resetPassword/{email}/{password}/{newPassword}")
-    public void remindPassword(@PathVariable String email, String password, String newPassword) {
-        studentService.resetPassword(email,password,newPassword);
+    public String remindPassword(@PathVariable String email, @PathVariable String password, @PathVariable String newPassword) {
+         return studentService.resetPassword(email,password,newPassword);
     }
 }
